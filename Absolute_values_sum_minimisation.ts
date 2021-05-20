@@ -7,20 +7,22 @@ function median(arr: number[]): number {
     console.log(med)
     arr.forEach(num => {
         if (num === med){
-            console.log(num)
-            //return num
+            return num
         }
     })
 }
 
-median([2, 4, 7])
-median([2, 4, 7, 6])
-median([1, 10, 6, 5])
+console.log(median([2, 4, 7]));
+console.log(median([2, 4, 7, 6]));
+console.log(median([2, 4, 7, 6, 6]));
+console.log(median([2, 4, 7, 6, 6, 8]));
+
 
 // Dylan's method
 function absoluteValuesSumMinimisation(a: number []): number {
+    a = a.sort()
     const isEven = a.length % 2 === 0;
-
+    return isEven ? a[a.length / 2 - 1] : a[Math.floor(a.length / 2)];
 }
 
 console.log(absoluteValuesSumMinimisation([2, 4, 7]));
